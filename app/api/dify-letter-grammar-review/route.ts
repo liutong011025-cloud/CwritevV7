@@ -64,9 +64,6 @@ Rules:
    - original: The incorrect word ONLY (no spaces, no punctuation, just the word)
    - corrected: The corrected word ONLY (no spaces, no punctuation, just the word)
    - start and end: You can set these to 0, they will be ignored. We will find the word in the text automatically.
-   - For example: If "She go to the library" has an error, original should be "go" and corrected should be "goes"
-   - For example: If "I are happy" has an error, original should be "are" and corrected should be "am"
-   - For example: If "tresure" is misspelled, original should be "tresure" and corrected should be "treasure"
    - ONLY identify the single word that has the error, not phrases or sentences
 3. original MUST be ONLY the incorrect word, NO spaces, NO punctuation, NO surrounding words
 4. corrected MUST be ONLY the corrected word, NO spaces, NO punctuation
@@ -78,6 +75,7 @@ Rules:
 6. start and end can be set to 0 (they will be recalculated automatically)
 7. If there are no errors, return an empty array: []
 8. Return ONLY the JSON array, no other text before or after
+9.首字母如果前一句话是逗号表示没有结束，这一句开头不用大写。
 
 Example format:
 [
