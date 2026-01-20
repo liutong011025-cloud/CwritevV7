@@ -171,7 +171,7 @@ export default function StoryReview({ storyState, onReset, onEdit, onBack, userI
   // 渲染带高亮的文本
   const renderHighlightedText = () => {
     if (grammarErrors.length === 0) {
-      return <p className="text-foreground leading-relaxed whitespace-pre-wrap text-base font-serif">{currentStory}</p>
+      return <p className="text-foreground leading-relaxed whitespace-pre-wrap text-base font-serif break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>{currentStory}</p>
     }
 
     const parts: Array<{ text: string; isError: boolean; errorIndex?: number }> = []
@@ -301,7 +301,7 @@ export default function StoryReview({ storyState, onReset, onEdit, onBack, userI
       })
     })
 
-    return <p className="text-foreground leading-relaxed whitespace-pre-wrap text-base font-serif">{result}</p>
+    return <p className="text-foreground leading-relaxed whitespace-pre-wrap text-base font-serif break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>{result}</p>
   }
 
   // 自动生成视频 - 暂时关闭
@@ -506,7 +506,7 @@ Created with Story Writer
               <p className="text-lg text-gray-700 mb-8 font-semibold">
                 {storyState.plot?.setting} • {storyState.structure?.type}
               </p>
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 border-2 border-purple-200 shadow-inner">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 border-2 border-purple-200 shadow-inner break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {isReviewing ? (
                     <div className="flex flex-col items-center justify-center py-12">
                       <div className="relative mx-auto mb-6 w-16 h-16">
